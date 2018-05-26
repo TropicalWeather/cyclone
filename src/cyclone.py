@@ -8,7 +8,7 @@ import config
 
 client = discord.Client()
 
-knotsTranslation = False
+# knotsTranslation = False
 
 @client.event
 async def on_ready():
