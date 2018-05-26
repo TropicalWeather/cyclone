@@ -37,7 +37,7 @@ async def on_message(message):
       mention = "@everyone "
     else:
       mention = ""
-    rules_channel = discord.utils.get(server.channels, id="354752912133586945");
+    rules_channel = discord.utils.get(message.channels, id="354752912133586945");
     embed = discord.Embed(title = "ATTENTION!", description =  mention + "There is an active storm that threatens property or life, so therefore we are enacting **Storm Mode**. Storm Mode simply means that rules are going to be more strictly enforced. If you haven't recently, please refamilizairze yourself with this server's rules at " + rules_channel.mention + ". Thank you.", color = int("0xff0000", 16))
     embed.set_thumbnail(url = config.STORMMODEIMAGE)
     await client.send_message(message.channel, embed = embed)
