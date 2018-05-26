@@ -58,38 +58,38 @@ async def on_message(message):
     await client.send_message(message.channel, embed = embed) 
     print ("Created Embed in #" + message.channel.name)
 
-  elif (message.content.startswith(".convertKnots")) and (str(message.author.top_role) in config.ROLES):
-    global knotsTranslation
-    if knotsTranslation == False:
-      knotsTranslation = True
-      await client.send_message(message.channel, "Knots -> MPH **ENABLED**")
-    else:
-      knotsTranslation = False
-      await client.send_message(message.channel, "Knots -> MPH **DISABLED**")
+  # elif (message.content.startswith(".convertKnots")) and (str(message.author.top_role) in config.ROLES):
+  #   global knotsTranslation
+  #   if knotsTranslation == False:
+  #     knotsTranslation = True
+  #     await client.send_message(message.channel, "Knots -> MPH **ENABLED**")
+  #   else:
+  #     knotsTranslation = False
+  #     await client.send_message(message.channel, "Knots -> MPH **DISABLED**")
 
-  elif (re.search("([0-9]*) knots", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
-    arg = re.search("([0-9]*) knots", message.content, re.IGNORECASE)
-    knots = arg.group(1)
-    mph = int(knots) * 1.15078
-    await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
+  # elif (re.search("([0-9]*) knots", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
+  #   arg = re.search("([0-9]*) knots", message.content, re.IGNORECASE)
+  #   knots = arg.group(1)
+  #   mph = int(knots) * 1.15078
+  #   await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
 
-  elif (re.search("([0-9]*) kts", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
-    arg = re.search("([0-9]*) kts", message.content, re.IGNORECASE)
-    knots = arg.group(1)
-    mph = int(knots) * 1.15078
-    await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
+  # elif (re.search("([0-9]*) kts", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
+  #   arg = re.search("([0-9]*) kts", message.content, re.IGNORECASE)
+  #   knots = arg.group(1)
+  #   mph = int(knots) * 1.15078
+  #   await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
 
-  elif (re.search("([0-9]*)knots", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
-    arg = re.search("([0-9]*)knots", message.content, re.IGNORECASE)
-    knots = arg.group(1)
-    mph = int(knots) * 1.15078
-    await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
+  # elif (re.search("([0-9]*)knots", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
+  #   arg = re.search("([0-9]*)knots", message.content, re.IGNORECASE)
+  #   knots = arg.group(1)
+  #   mph = int(knots) * 1.15078
+  #   await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
 
-  elif (re.search("([0-9]*)kts", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
-    arg = re.search("([0-9]*)kts", message.content, re.IGNORECASE)
-    knots = arg.group(1)
-    mph = int(knots) * 1.15078
-    await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
+  # elif (re.search("([0-9]*)kts", message.content, re.IGNORECASE)) and (knotsTranslation == True) and (message.author.name != client.user.name):
+  #   arg = re.search("([0-9]*)kts", message.content, re.IGNORECASE)
+  #   knots = arg.group(1)
+  #   mph = int(knots) * 1.15078
+  #   await client.send_message(message.channel, str(knots) + " knots = " + str(mph) + " MPH")
 
 
 client.run(config.TOKEN)
